@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Edit To-Do</title>
+  </head>
+  <body>
+    <h1>Edit To-Do</h1>
+
+    <!-- Form for editing To-Do -->
+    <form method="post">
+      {% csrf_token %} {{ form.as_p }}
+      <button type="submit">Save Changes</button>
+    </form>
+
+    <!-- Link to go back to the To-Do list -->
+    <a href="{% url 'todo_list' %}">Back to To-Do List</a>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>To-Do List</title>
+  </head>
+  <body>
+    <h1>To-Do List</h1>
+    <ul>
+      {% for todo in todos %}
+      <li>
+        <b> Title: </b>
+        {{ todo.title }}
+        <br />
+        <b> Description: </b>
+        {{ todo.description }}
+        <br />
+        <b> Completed Status: </b>
+        {{ todo.completed }}
+        <a href="/todo/edit/{{todo.id}}">Edit</a>
+        <a href="/todo/del/{{todo.id}}">Delete</a>
+        <br /><br />
+      </li>
+      {% endfor %}
+    </ul>
+    <a href="{% url 'create_todo' %}">Add New To-Do</a>
+  </body>
+</html>
